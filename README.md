@@ -1,5 +1,5 @@
 # video-transcription-app
-
+```
 video-transcription-app/
 ├── package.json
 ├── server.js
@@ -8,3 +8,4 @@ video-transcription-app/
     ├── index.html
     ├── styles.css
     └── script.js
+```
