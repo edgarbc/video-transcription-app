@@ -39,7 +39,7 @@ def transcribe(file_path):
 
 
 if __name__ == "__main__":
-    file_path = ""
+    file_path = "sample.mp3"
     print(transcribe(file_path))
 
 
