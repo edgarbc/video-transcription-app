@@ -13,6 +13,9 @@ app.post('/upload', upload.single('video'), (req, res) => {
     const videoPath = req.file.path;
     const command = `npm run transcribe -- ${videoPath}`;
     
+    // print the command to the console
+    console.log(`Running command: ${command}`);
+
     exec(command, (error, stdout, stderr) => {
         if (error) {
             console.error(`Error: ${error.message}`);
@@ -25,6 +28,17 @@ app.post('/upload', upload.single('video'), (req, res) => {
         const transcription = stdout;
         res.json({ transcription });
     });
+
+    // print a message when the transcription is complete
+    console.log('Transcription complete!');
+    // delete the video file after processing
+    fs.unlink(videoPath, (err) => {
+        if (err) {
+            console.error(`Error deleting file: ${err}`);
+        }
+    });
+    //print a message when the video file is deleted
+    console.log('Video file deleted!');
 });
 
 app.listen(3000, () => {

@@ -13,6 +13,8 @@ def extract_audio_from_video(video_path, audio_output_path):
         None
     """
 
+    print(f"Extracting audio from {video_path}...")
+
     try:
         # Load the video file
         video_clip = VideoFileClip(video_path)
