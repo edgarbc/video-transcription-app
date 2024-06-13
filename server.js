@@ -31,14 +31,14 @@ app.post('/upload', upload.single('video'), (req, res) => {
 
     // print a message when the transcription is complete
     console.log('Transcription complete!');
-    // delete the video file after processing
-    fs.unlink(videoPath, (err) => {
-        if (err) {
-            console.error(`Error deleting file: ${err}`);
-        }
-    });
-    //print a message when the video file is deleted
-    console.log('Video file deleted!');
+    // // delete the video file after processing
+    // fs.unlink(videoPath, (err) => {
+    //     if (err) {
+    //         console.error(`Error deleting file: ${err}`);
+    //     }
+    // });
+    // //print a message when the video file is deleted
+    // console.log('Video file deleted!');
 });
 
 app.listen(3000, () => {

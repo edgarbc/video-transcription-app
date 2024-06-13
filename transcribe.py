@@ -39,9 +39,10 @@ def transcribe(file_path):
     result = model.transcribe(file_path)
     return result["text"]
 
-
+# run the code with arguments
 if __name__ == "__main__":
-    file_path = "sample.mp3"
-    print(transcribe(file_path))
+    file_path = sys.argv[1]
+    #file_path = "sample.mp3"
+    print(f"transcription: {transcribe(file_path)}")
 
 
